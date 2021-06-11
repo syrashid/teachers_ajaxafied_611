@@ -1,3 +1,12 @@
 <div class="container text-center mt-5">
   <%= link_to "Browse Teachers", teachers_path, class: "btn btn-dark mb-5" %>
 </div>
+
+<div class="d-flex justify-content-center mt-4" data-controller="counter">
+  <button type="button" class="btn btn-dark" data-action="click->counter#refresh">
+    Refresh Counter
+    <span class="badge badge-light" data-counter-target="count">
+      <%= @teacher_count %>
+    </span>
+  </button>
+</div>
