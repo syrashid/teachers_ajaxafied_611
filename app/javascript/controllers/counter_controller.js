@@ -4,11 +4,11 @@ export default class extends Controller {
   static targets = [ 'count' ];
 
   connect() {
-    console.log(this.countTarget);
+    setInterval(this.refresh, 5000);
   }
 
-  refresh() {
-    console.log("Button has been pressed 👉 ");
+  refresh = () => {
+    console.log("Count has been refreshed 👉 ");
     fetch("/teachers", { headers: { accept: "application/json" } })
       .then((response) => response.json())
       .then((data) => {
